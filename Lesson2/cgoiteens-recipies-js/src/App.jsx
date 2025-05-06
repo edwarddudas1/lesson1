@@ -1,25 +1,17 @@
-import { useState } from 'react'
 import './App.css'
+import Recipe from './Recipe' 
+import recipesData from "./recipes.json"
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
 
-
-function App(){
   return (
-    <div className="App">
-      <Greeting name="Іван" />
-    </div>
+    <>
+      {recipesData.map((recipe,index)=>{
+        <Recipe key={index} recipe={recipe}/>
+      })}
+
+    </>
   )
 }
 
-
-function Greeting({name}){
-  return <h1>Привіт, {name}!</h1>
-}
-
-export default Greeting
+export default App
