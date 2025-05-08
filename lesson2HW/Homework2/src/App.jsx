@@ -7,9 +7,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <Greeting name="Іван"/>
-      </div>
+      <Greeting name="Іван"/>
     </>
   )
 }

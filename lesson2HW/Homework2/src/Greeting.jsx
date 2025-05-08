@@ -1,11 +1,11 @@
 import React from 'react'
 import './App.css'
 
-function Greeting(name) {
+function Greeting(props) {
 
   return (
     <>
-      <h1>Привіт,{name}!</h1>
+      <h1>Привіт,{props.name}!</h1>
     </>
   )
 }
