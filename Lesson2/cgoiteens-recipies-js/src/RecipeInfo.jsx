@@ -1,10 +1,19 @@
-export default function RecipeInfo({icon,text}){
-    return (
-        <>
-        <div className="recipe-info">
-            <img src={icon} alt="icon" />
-            <p>{text}</p>
-        </div>
-        </>
-    )
+import PropTypes from "prop-types";
+
+export default function RecipeInfo({ icon, text }) {
+  return (
+    <>
+      <div>
+        <img src={icon} alt="icon" />
+        <p>
+          {text}, {icon}
+        </p>
+      </div>
+    </>
+  );
 }
+
+RecipeInfo.propTypes = {
+  text: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+};
