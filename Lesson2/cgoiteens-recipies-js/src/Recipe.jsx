@@ -1,5 +1,10 @@
 import RecipeInfo from "./RecipeInfo";
 import PropTypes from "prop-types";
+import styled from 'styled-components';
+
+const StyleCalories = styled.p`
+color: neon;
+`
 export default function Recipe({ recipe, icon }) {
     const { name, time, servings, calories, difficulty, image } = recipe;
 
@@ -10,7 +15,10 @@ export default function Recipe({ recipe, icon }) {
         <img src={image} alt="image" width="300" />
         <RecipeInfo text={time} icon={icon.time} />
         <RecipeInfo text={servings} />
-        <RecipeInfo text={calories} icon={icon.calories} />
+        <StyleCalories>
+          <RecipeInfo text={calories} icon={icon.calories} />
+        </StyleCalories>
+        
         <RecipeInfo text={difficulty} />
       </>
     );
