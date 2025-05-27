@@ -1,5 +1,5 @@
 import './App.css'
-import Statics from "./components/statistics"
+import Statistics from "./components/Statistics"
 import Data from "./data.json"
 
 function App() {
