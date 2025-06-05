@@ -1,4 +1,16 @@
 import Data from "../data.json";
+import styled from 'styled-components';
+
+const Title = styled.h2`
+  color: grey;
+`
+
+const Container = styled.section`
+  width: 400px;
+  height: 300px;
+  display: flex-wrap; 
+`
+
 
 const getRandomColor = () => {
   
@@ -13,8 +25,8 @@ const getRandomColor = () => {
 export default function statics({ title, stats = Data }) {
   return (
     <>
-      <section className="statistics">
-        {title && <h2 className="title">{title}</h2>}
+      <Container className="statistics">
+        {title && <Title className="title">{title}</Title>}
 
         <ul className="stat-list">
           {stats.map(({ id, label, percentage }) => (
@@ -28,7 +40,7 @@ export default function statics({ title, stats = Data }) {
             </li>
           ))}
         </ul>
-      </section>
+      </Container>
     </>
   );
 }

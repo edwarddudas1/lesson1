@@ -2,6 +2,11 @@ import RecipeInfo from "./RecipeInfo";
 import PropTypes from "prop-types";
 import styled from 'styled-components';
 
+
+const Container = styled.div`
+color: red;
+`
+
 const Title = styled.h1`
 font-size: 180px;`
 
@@ -22,7 +27,7 @@ export default function Recipe({ recipe, icon }) {
         <RecipeInfo text={servings} />
         <RecipeInfo text={calories} icon={icon.calories} />
         <RecipeInfo text={difficulty} />
-        </div>
+      </div>
       </>
     );
 }
