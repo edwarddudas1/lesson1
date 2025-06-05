@@ -2,13 +2,29 @@ import Data from "../data.json";
 import styled from 'styled-components';
 
 const Title = styled.h2`
-  color: grey;
+  color:rgb(104, 104, 104);
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 20px;
 `
 
 const Container = styled.section`
   width: 400px;
-  height: 300px;
-  display: flex-wrap; 
+  background-color: white;
+`
+const  Statlist = styled.ul`
+display: flex;
+flex-direction: row;
+padding: 0;
+margin: 0;
+list-style: none
+`
+const  Statitem = styled.li`
+flex: 1;
+padding: 20px 0;
+text-align: center;
+font-weight: 600;
+color: white
 `
 
 
@@ -28,18 +44,18 @@ export default function statics({ title, stats = Data }) {
       <Container className="statistics">
         {title && <Title className="title">{title}</Title>}
 
-        <ul className="stat-list">
+        <Statlist className="stat-list">
           {stats.map(({ id, label, percentage }) => (
-            <li
+            <Statitem
               key={id}
               className="item"
               style={{ backgroundColor: getRandomColor() }}
             >
               <span className="label">{label}</span>
               <span className="percentage">{percentage}%</span>
-            </li>
+            </Statitem>
           ))}
-        </ul>
+        </Statlist>
       </Container>
     </>
   );

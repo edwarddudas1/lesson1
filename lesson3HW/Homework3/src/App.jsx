@@ -6,7 +6,7 @@ function App() {
   return (
     <>
     <Statistics title="Upload stats" stats={Data} />;
-    <Statistics stats={Data} />;
+
     </>
   )
 }
