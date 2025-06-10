@@ -19,6 +19,12 @@ export default class TaskList extends Component {
     text.value = '';
     this.forceUpdate();
   };
+
+  handleDeleteButton = (id) => {
+    console.log('button')
+    TaskList.tasks = TaskList.tasks.filter((task) => task.id !== id)
+    this.forceUpdate();
+  }
   render() {
     return (
       <section className="task-list">
@@ -30,7 +36,7 @@ export default class TaskList extends Component {
           {TaskList.tasks.map((task) => (
             <li key={task.id}>
               <span>{task.text}</span>
-              <button>Delete</button>
+              <button onClick={() => this.handleDeleteButton(task.id)}>Delete</button>
             </li>
           ))}
         </ul>
