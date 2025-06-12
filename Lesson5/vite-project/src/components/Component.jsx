@@ -12,6 +12,9 @@ export default class Hello extends Component {
         this.setState({count: this.state.count + 1})
     }
 
+    handleDecrementClick = () => {
+        this.setState({count: this.state.count - 1})
+    }
     
   render() {
     return (
@@ -19,7 +22,7 @@ export default class Hello extends Component {
         <h1>Counter's number is</h1>
         <p>{this.state.count}</p>
         <button onClick={this.handleIncrementClick}>Increment</button>
-        <button>Decrement</button>
+        <button onClick={this.handleDecrementClick}>Decrement</button>
       </>
     );
   }
