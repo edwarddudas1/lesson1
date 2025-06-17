@@ -1,46 +1,32 @@
-import Event from "./Event";
-import styled from "styled-components";
+import event from './Event'
+import styled from 'styled-components'
+
 
 const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: rgb(205, 204, 204);
-  border: 4px solid rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-`;
-
-const MainTitle = styled.h1`
-  width: 100%;
-  background-color: rgba(121, 226, 255, 0.8);
-  border: 2px solid rgba(0, 195, 255, 0.3);
-  border-radius: 15px;
-  font-size: 36px;
-  padding: 15px;
+display: flex;
+flex-wrap: wrap;
+flex: 1 1;
 `
 
-export default function PageBoard({ events }) {
-  return (
-    <>
-      <MainTitle>24th Core Worlds Coalition Conference</MainTitle>
+const Title = styled.h2`
+  color: black;
+`
+const Text = styled.p`
+color: grey;
+font-weight: 500;
+`
 
-      <Container className="page-board">
-        {events.map((event, index) => (
-          <Event
-            key={index}
-            name={event.name}
-            location={event.location}
-            speaker={event.speaker}
-            type={event.type}
-            start={event.time.start}
-            end={event.time.end}
-          ></Event>
-        ))}
-        ;
-      </Container>
-    </>
-  );
+export default function Event({name, location, speaker,type,start,end}) {
+    return (
+
+        <Container>
+                <Title className="event-name">{name}</Title>
+                <Text className="event-location">Location: {location}</Text>
+                <Text className="event-speaker">Speaker: {speaker}</Text>
+                <Text className="event-type">Type: {type}</Text>
+                <Text className="event-start">Start: {start}</Text>
+                <Text className="event-end">End: {end}</Text>
+        </Container>
+    )
+
 }

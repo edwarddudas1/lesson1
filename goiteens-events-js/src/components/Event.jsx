@@ -1,26 +1,28 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Title = styled.h2`
-  color: #000;
+  color: black;
 `;
-const EventContainer = styled.div`
-  background-color: rgba(255, 251, 142, 0.8);
-  border: 2px solid rgba(166, 183, 43, 0.53);
-  width: 300px;
-  border-radius: 15px;
+
+const Text = styled.p`
+  color: grey;
+  font-weight: 500;
 `;
-export default function Event({name, location, speaker,type,start,end}) {
-    return (
 
-        <EventContainer className="event-container">
-        <Title>{name}</Title>
-        <p>location: {location}</p>
-        <p>speaker: {speaker}</p>
-        <p>type: {type}</p>
-        <p>start: {start}</p>
-        <p>end: {end}</p>
-      </EventContainer>
-    )
-
+export default function Event({ name, location, speaker, type, start, end }) {
+  return (
+    <Container>
+      <Title>{name}</Title>
+      <Text>Location: {location}</Text>
+      <Text>Speaker: {speaker}</Text>
+      <Text>Type: {type}</Text>
+      <Text>Start: {start}</Text>
+      <Text>End: {end}</Text>
+    </Container>
+  );
 }
