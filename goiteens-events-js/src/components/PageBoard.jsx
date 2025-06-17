@@ -1,32 +1,34 @@
-import event from './Event'
-import styled from 'styled-components'
-
+import styled from "styled-components";
+import Event from "./Event";
+import eventsData from "../upcoming-events.json";
 
 const Container = styled.div`
-display: flex;
-flex-wrap: wrap;
-flex: 1 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1; 
+`
+const Box = styled.ul`
+ 
 `
 
-const Title = styled.h2`
-  color: black;
-`
-const Text = styled.p`
-color: grey;
-font-weight: 500;
-`
 
-export default function Event({name, location, speaker,type,start,end}) {
-    return (
-
-        <Container>
-                <Title className="event-name">{name}</Title>
-                <Text className="event-location">Location: {location}</Text>
-                <Text className="event-speaker">Speaker: {speaker}</Text>
-                <Text className="event-type">Type: {type}</Text>
-                <Text className="event-start">Start: {start}</Text>
-                <Text className="event-end">End: {end}</Text>
-        </Container>
-    )
-
+export default function PageBoard({ events = eventsData }) {
+  return (
+    <>
+      <Container>
+        <Box>
+          {events.map((event, index) => (
+            <Event
+              key={index}
+              name={event.name}
+              start={event.time.start}
+              end={event.time.end}
+              location={event.location}
+              speaker={event.speaker}
+            />
+          ))}
+        </Box>
+      </Container>
+    </>
+  );
 }
