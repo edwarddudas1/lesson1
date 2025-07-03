@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
-import TodoList from "./components/TodoList.jsx";
+import TodoList from "./components/TodoList";
 import initialTodos from "./todo.json";
+import TodoEditor from "./components/TodoEditor"
 
 class App extends React.Component {
   state = {
@@ -11,10 +12,11 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <TodoList />
+        <TodoEditor/>
+        <TodoList todos={this.state.todos} />
       </>
     );
   }
 }
 
-export default App;
+export default App
