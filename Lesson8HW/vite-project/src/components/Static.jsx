@@ -1,1 +1,3 @@
-export default function Static()
+export default function Static(){
+    return
+}

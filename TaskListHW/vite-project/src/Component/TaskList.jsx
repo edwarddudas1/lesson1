@@ -29,6 +29,7 @@ export default class TaskList extends Component {
   render() {
     return (
       <section className="task-list">
+        <img src="" alt="" />
         <div>
           <input className="add-task" type="text" />
           <button onClick={this.handleAddTask}>Add Task</button>
