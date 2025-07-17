@@ -1,11 +1,14 @@
-function Site() {
-
-  return (
+import { useState } from "react";
+function Welcome(props) {
+  function Counter(){
+    const [count, setCount] = useState(0)
+  }
+  return(
     <>
-    <img src="" alt="Logo" />
-    <h1>Music Mood</h1>
+    <h2>Hello, {props.name}!</h2>
+    <p>Счёт {count}</p>
+    <button onClick={() => setCount(count +1)}>+</button>
     </>
   )
-}
-
-export default Site
+};
+export default Welcome
