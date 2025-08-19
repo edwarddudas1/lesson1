@@ -1,5 +1,5 @@
 import RecipeInfo from "./RecipeInfo";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 export default function Recipe({ recipe, icon }) {
     const { name, time, servings, calories, difficulty, image } = recipe;
 

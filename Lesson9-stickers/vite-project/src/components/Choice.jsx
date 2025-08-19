@@ -1,8 +1,19 @@
-export default function Choice({selectedSticker}) {
+import styled from 'styled-components';
+export default function Choice({ selectedSticker }) {
 
-    return (
-        <div>
-            {selectedSticker ? <p>Selected sticker is {selectedSticker}</p> : <p>No sticker selected</p>}
-        </div>
-    )
+    const TextChoice = styled.p`
+    font-size: 50px;
+    `;
+
+  return (
+    <>
+      <div>
+        {selectedSticker ? 
+          <TextChoice>Seleted sticker is {selectedSticker}</TextChoice>
+         : 
+          <TextChoice>No sticker selected</TextChoice>
+        }
+      </div>
+    </>
+  );
 }

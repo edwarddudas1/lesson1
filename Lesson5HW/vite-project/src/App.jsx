@@ -1,7 +1,7 @@
 import Recipe from './Recipe';
 import recipesData from './Recipies';
-// import { IoTimer } from "react-icons/io5";
-// import { FaFire } from "react-icons/fa6";
+import { IoTimer } from "react-icons/io5";
+import { FaFire } from "react-icons/fa6";
 
 function App() {
   
