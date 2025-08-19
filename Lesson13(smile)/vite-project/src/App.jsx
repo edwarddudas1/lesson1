@@ -4,12 +4,23 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [mood, setMood] = useState("😂")
 
+  const changeMood = () => {
+    if(mood === "😂"){
+      setMood("🥲");
+    } else if(mood === "🥲"){
+      setMood("😡")
+    }else{
+      setMood("😂")
+    }
+  }
   return (
     <>
-    <div></div>
-    <button>Change mood</button>
+    <div >
+      {mood}
+    </div>
+    <button onClick={changeMood}>Change mood</button>
     </>
   )
 }
