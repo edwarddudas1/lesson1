@@ -1,11 +1,11 @@
 import './App.css'
-import Modal from "./Modal.jsx"
+
 function App() {
-  
+
 
   return (
     <>
-      <Modal/>
+    
     </>
   )
 }
