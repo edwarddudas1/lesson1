@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Counter from "./components/Counter";
 
 const containerStyles = {
@@ -12,13 +12,11 @@ const containerStyles = {
 export default function App() {
   return (
     <div style={containerStyles}>
-      <AppBar />
-
-      <Switch>
-        <Route path="/counter">
-          <Counter />
-        </Route>
-      </Switch>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/counter" component={<Counter/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./Counter.module.css";
+
 
 export default function Counter() {
   const [counterA, setCounterA] = useState(0);
@@ -21,7 +21,7 @@ export default function Counter() {
   return (
     <>
       <button
-        className={styles.btn}
+     
         type="button"
         onClick={handleCounterAIncrement}
       >
@@ -29,7 +29,7 @@ export default function Counter() {
       </button>
 
       <button
-        className={styles.btn}
+        
         type="button"
         onClick={handleCounterBIncrement}
       >
