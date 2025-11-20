@@ -1,38 +1,42 @@
-import { NavLink } from 'react-router-dom';
-import styles from './Navigation.module.css';
+import { NavLink } from "react-router-dom";
+import styles from "./Navigation.module.css";
 
 export default function Navigation() {
   return (
     <nav>
       <NavLink
-        exact
         to="/"
-        className={styles.link}
-        activeClassName={styles.activeLink}
+        end
+        className={({ isActive }) =>
+          isActive ? `${styles.link} ${styles.activeLink}` : styles.link
+        }
       >
         Главная
       </NavLink>
 
       <NavLink
         to="/authors"
-        className={styles.link}
-        activeClassName={styles.activeLink}
+        className={({ isActive }) =>
+          isActive ? `${styles.link} ${styles.activeLink}` : styles.link
+        }
       >
         Авторы
       </NavLink>
 
       <NavLink
         to="/books"
-        className={styles.link}
-        activeClassName={styles.activeLink}
+        className={({ isActive }) =>
+          isActive ? `${styles.link} ${styles.activeLink}` : styles.link
+        }
       >
         Книги
       </NavLink>
 
       <NavLink
         to="/table"
-        className={styles.link}
-        activeClassName={styles.activeLink}
+        className={({ isActive }) =>
+          isActive ? `${styles.link} ${styles.activeLink}` : styles.link
+        }
       >
         Таблица
       </NavLink>

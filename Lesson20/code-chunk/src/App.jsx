@@ -1,13 +1,13 @@
 import { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AppBar from './components/AppBar/AppBar.jsx';
 import Container from './components/Container/Container.jsx';
-// import HomeView from './views/HomeView';
-// import AuthorsView from './views/AuthorsView';
-// import BooksView from './views/BooksView';
-// import BookDetailsView from './views/BookDetailsView';
-// import NotFoundView from './views/NotFoundView';
-// import TableView from './views/TableView';
+import HomeView from './views/HomeView';
+import AuthorsView from './views/AuthorsView';
+import BooksView from './views/BooksView';
+import BookDetailsView from './views/BookDetailsView';
+import NotFoundView from './views/NotFoundView';
+import TableView from './views/TableView';
 
 const HomeView = lazy(() =>
   import('./views/HomeView.jsx' /* webpackChunkName: "home-view" */),
@@ -26,7 +26,7 @@ export default function App() {
       <AppBar />
 
       <Suspense fallback={<h1>ЗАГРУЖАЕМ МАРШРУТ...</h1>}>
-        <Switch>
+        <Routes>
           <Route path="/" exact>
             <HomeView />
           </Route>
@@ -50,7 +50,7 @@ export default function App() {
           <Route>
             <NotFoundView />
           </Route>
-        </Switch>
+        </Routes>
       </Suspense>
     </Container>
   );
