@@ -1,14 +1,8 @@
-
-import './App.css'
+import { useSelector } from "react-redux";
+import "./App.css";
 
 function App() {
-
-
-  return (
-    <>
-
-    </>
-  )
+  return <></>;
 }
 
-export default App
+export default App;
